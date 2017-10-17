@@ -573,7 +573,7 @@ var LayoutCtrl = function (_BaseCtrl) {
 			return {
 				menuItems: [{
 					name: 'Work',
-					link: '/'
+					link: '#!/'
 				}, {
 					name: 'Pubs & Presentations',
 					link: '#!/citations'

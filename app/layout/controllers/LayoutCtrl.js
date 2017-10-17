@@ -14,7 +14,7 @@ export default class LayoutCtrl extends BaseCtrl {
 			menuItems: [
 				{
 					name: 'Work',
-					link: '/',
+					link: '#!/',
 				},
 				{
 					name: 'Pubs & Presentations',
