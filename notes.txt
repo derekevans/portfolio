@@ -1,3 +1,5 @@
 Check out this repo on AngularJS best practices:
 
 https://github.com/mgechev/angularjs-style-guide
+
+empty .nojekyll file allows the use of files in node_modules.
