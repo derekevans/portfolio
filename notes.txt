@@ -1,0 +1,3 @@
+Check out this repo on AngularJS best practices:
+
+https://github.com/mgechev/angularjs-style-guide

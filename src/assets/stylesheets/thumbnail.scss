@@ -1,0 +1,34 @@
+.thumbnail-container {
+	margin: 5%;
+	text-align: center;
+	box-sizing: border-box;
+
+	.thumbnail {
+		display: inline-block;
+		margin: 20px;
+
+		.thumbnail-img {
+			width: 275px;
+			height: 275px;
+			background-repeat:no-repeat;
+		    background-position: top center;
+			background-size: cover;
+		}
+
+		.thumbnail-text {
+			font-size: 18px;
+			text-align: center;
+			margin-top: 10px;
+			width: 275px;
+		}
+	}
+}
+
+
+@media only screen and (max-device-width: 800px) {
+	.thumbnail-container {
+		margin: 5% 0;
+	}
+}
+
+

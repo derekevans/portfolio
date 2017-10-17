@@ -1,0 +1,15 @@
+#citations-container {
+	margin: 20px 20% 40px 20%;
+	text-align: left;
+
+	h2 {
+		text-align: center;
+	}
+}
+
+
+@media only screen and (max-device-width: 800px) {
+	#citations-container {
+		margin: 20px 5% 40px 5%;
+	}
+}

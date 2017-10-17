@@ -1,0 +1,29 @@
+<div id="navbar">
+	<div class="navbar-name">
+		<a href="/">Derek Evans</a>
+	</div>
+	<div id="menu">
+		<div ng-repeat="menuItem in menuItems" class="menu-items {{ menuItem.class }}">
+			<a ng-attr-href="{{(menuItem.link) ? menuItem.link : undefined}}">{{ menuItem.name }}</a>
+		</div>
+	</div>
+</div>
+<div id="mobile-navbar">
+	<div id="hamburger-container">
+		<div id="hamburger">
+			<span id="top-line"></span>
+			<span id="mid-line"></span>
+			<span id="bottom-line"></span>
+		</div>
+	</div>
+	<div class="navbar-name">
+		<a href="/">Derek Evans</a>
+	</div>
+	<div id="mobile-menu">
+		<a ng-repeat="menuItem in menuItems" ng-attr-href="{{(menuItem.link) ? menuItem.link : undefined}}"class="{{ menuItem.class }}">
+			<div class="mobile-menu-items">{{ menuItem.name }}</div>
+		</a>
+	</div>
+	<div id="mobile-menu-overlay">
+	</div>
+</div>

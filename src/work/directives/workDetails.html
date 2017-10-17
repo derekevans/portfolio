@@ -1,0 +1,19 @@
+<div class="work-container">
+	<a href="{{ link }}">
+	<div class="work-img" id="{{ imageId }}">
+	</div>
+	</a>
+	<div class="work-text">
+		<div>
+		<h2>{{ title }} 
+			<a ng-if="githubLink" href="{{ githubLink }}">
+				<i class="fa fa-github git-icon" aria-hidden="true"></i>
+			</a>
+		</h2>
+		<p>{{ description }}</p>
+		<div class="work-button-container">
+		<a href="{{ link }}"><button class="work-button">Check it out!</button></a>
+		</div>
+		</div>
+	</div>
+</div>

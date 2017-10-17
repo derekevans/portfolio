@@ -1,0 +1,115 @@
+.work-container {
+	width: 100%;
+
+    .work-text {
+        width: -moz-calc(35% - 30px);
+        width: -webkit-calc(35% - 30px);
+        width: -ms-calc(35% - 30px);
+        width: -o-calc(35% - 30px);
+        width: calc(35% - 30px);
+        margin-left: 10px;
+        margin-right: 20px;
+        float: left;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .work-img {
+        height: -moz-calc(100vh - 120px);
+        height: -webkit-calc(100vh - 120px);
+        height: -ms-calc(100vh - 120px);
+        height: -o-calc(100vh - 120px);
+        height: calc(100vh - 120px);
+        width: -moz-calc(65% - 30px);
+        width: -webkit-calc(65% - 30px);
+        width: -ms-calc(65% - 30px);
+        width: -o-calc(65% - 30px);
+        width: calc(65% - 30px);
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        float: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .git-icon {
+        margin: 0 0 -8px 10px;
+        font-size: 30px;
+    }
+}
+
+
+.work-button-container {
+	text-align: center;
+
+    .work-button {
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #15a346;
+        color: #15a346;
+        transition: all 0.5s ease;
+        margin: 10px 0 20px 0;
+        font-family: 'Montserrat', sans-serif;
+        display: inline-block;
+        font-size: 16px;
+        -webkit-transition: all 0.3s ease-in-out;
+           -moz-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: white;
+            background-color: #15a346;
+            cursor: pointer;
+        }
+
+        &:active {
+            color: #15a346;
+            background-color: white;
+            cursor: pointer;
+            border: none;
+            
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 800px) {
+    .work-container {
+        height: auto;
+
+        .work-img, .work-text {
+            float: none;
+            margin: 0;
+        }
+        
+        .work-img {
+            height: 50vh;
+            width: 100%;
+        }
+        
+        .work-text {
+            height: auto;
+            width: 90%;
+            padding: 0 5%;
+
+            h2 {
+                margin: 15px 0;
+            }
+        }
+        
+        .work-button {
+            margin-bottom: 40px;
+        }
+    }
+}
