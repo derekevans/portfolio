@@ -3,8 +3,9 @@
 		<a href="#!/">Derek Evans</a>
 	</div>
 	<div id="menu">
-		<div ng-repeat="menuItem in menuItems" class="menu-items {{ menuItem.class }}">
-			<a ng-attr-href="{{(menuItem.link) ? menuItem.link : undefined}}">{{ menuItem.name }}</a>
+		<div ng-repeat="menuItem in menuItems" class="menu-items" >
+			<a ng-attr-href="{{(menuItem.link) ? menuItem.link : undefined}}" class="{{ menuItem.class }}">		{{ menuItem.name }}
+			</a>
 		</div>
 	</div>
 </div>
