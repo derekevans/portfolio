@@ -81,6 +81,7 @@ var MobileNavbarAnimator = function () {
 		this.toggleMenuOnClickEvent();
 		this.deactivateMenuOnItemClickEvent();
 		this.scrollOnAboutClick();
+		console.log(this);
 	}
 
 	_createClass(MobileNavbarAnimator, [{
@@ -241,6 +242,7 @@ var NavbarAnimator = function () {
 		this.aboutItem = this.navbarMenu.find(".about");
 
 		this.scrollOnAboutClick();
+		console.log(this);
 	}
 
 	_createClass(NavbarAnimator, [{

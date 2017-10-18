@@ -6,6 +6,7 @@ export default class NavbarAnimator {
 		this.aboutItem = this.navbarMenu.find(".about")
 
 		this.scrollOnAboutClick()
+		console.log(this)
 	}
 
 	scrollOnAboutClick() {
