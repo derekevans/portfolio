@@ -206,12 +206,12 @@ var MobileNavbarAnimator = function () {
 	}, {
 		key: "disableScroll",
 		value: function disableScroll() {
-			$('html, body').css('overflow', 'hidden');
+			angular.element('html, body').css('overflow', 'hidden');
 		}
 	}, {
 		key: "enableScroll",
 		value: function enableScroll() {
-			$('html, body').css('overflow-y', 'auto');
+			angular.element('html, body').css('overflow-y', 'auto');
 		}
 	}, {
 		key: "deactivateMenuOnItemClickEvent",

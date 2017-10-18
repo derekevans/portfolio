@@ -18,7 +18,6 @@ export default class MobileNavbarAnimator {
 
 		this.toggleMenuOnClickEvent()
 		this.deactivateMenuOnItemClickEvent()
-		this.disableTouchScrollOnDisplayed()
 	}
 
 	toggleMenuOnClickEvent() {
@@ -36,6 +35,7 @@ export default class MobileNavbarAnimator {
 		this.colorItemsWhite()
 		this.showOverlay()
 		this.hamburgerToX()
+		this.disableScroll()
 		this.displayed = true
 	}
 
@@ -44,6 +44,7 @@ export default class MobileNavbarAnimator {
 		this.colorItemsBlack()
 		this.hideOverlay()
 		this.xToHamburger()
+		this.enableScroll()
 		this.displayed = false
 	}
 
@@ -95,12 +96,12 @@ export default class MobileNavbarAnimator {
 	    })
 	}
 
-	disableTouchScrollOnDisplayed() {
-		angular.element('body').on('touchmove', (event) => {
-			if (this.displayed) {
-				event.preventDefault();
-			}
-		})
+	disableScroll() {
+		angular.element('html, body').css('overflow', 'hidden')
+	}
+
+	enableScroll() {
+		angular.element('html, body').css('overflow-y', 'auto')
 	}
 
 	deactivateMenuOnItemClickEvent() {
