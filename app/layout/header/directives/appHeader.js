@@ -5,10 +5,7 @@ export default function appHeader(controller) {
 	var directive = {
 		templateUrl: 'app/layout/header/directives/appHeader.html',
 		link: () => {
-			angular.element(document).ready(() => {
-				new NavbarAnimator(angular.element('html'))
-				new MobileNavbarAnimator(angular.element('html'))
-			})
+			new MobileNavbarAnimator(angular.element("#mobile-navbar"))
 		}
 	}
 

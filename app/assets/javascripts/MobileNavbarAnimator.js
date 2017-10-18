@@ -1,8 +1,6 @@
 export default class MobileNavbarAnimator {
-	constructor(htmlElem) {
-		this.html = htmlElem
-		this.mobileNavbar = this.html.find("#mobile-navbar")
-		this.footer = this.html.find("#footer")
+	constructor(mobileNavbarElem) {
+		this.mobileNavbar = mobileNavbarElem
 
 		this.hamburgerMenuContainer = this.mobileNavbar.find("#hamburger-container")
 		this.hamburgerMenuLines = this.hamburgerMenuContainer.find("span")
@@ -15,13 +13,11 @@ export default class MobileNavbarAnimator {
 		this.mobileMenu = this.mobileNavbar.find("#mobile-menu")
 		this.mobileMenuOverlay = this.mobileNavbar.find("#mobile-menu-overlay")
 		this.mobileMenuItems = this.mobileMenu.find(".mobile-menu-items")
-		this.aboutItem = this.mobileMenu.find(".about")
 
 		this.displayed = false
 
 		this.toggleMenuOnClickEvent()
 		this.deactivateMenuOnItemClickEvent()
-		this.scrollOnAboutClick()
 		console.log(this)
 	}
 
@@ -118,15 +114,6 @@ export default class MobileNavbarAnimator {
 			if (this.displayed) {
 				this.deactivateMobileNavbar()
 			}
-		})
-	}
-
-	scrollOnAboutClick() {
-		this.aboutItem.click(() => {
-			this.deactivateMobileNavbar()
-			this.html.animate({
-        		scrollTop: this.footer.offset().top
-    		}, 500);
 		})
 	}
 }

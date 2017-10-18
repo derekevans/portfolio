@@ -1,9 +1,8 @@
-export default class NavbarAnimator {
-	constructor(htmlElem) {
-		this.html = htmlElem
-		this.navbarMenu = this.html.find("#menu")
+export default class AboutScroller {
+	constructor() {
+		this.html = angular.element('html')
 		this.footer = this.html.find("#footer")
-		this.aboutItem = this.navbarMenu.find(".about")
+		this.aboutItems = this.html.find(".about")
 
 		this.scrollOnAboutClick()
 		console.log(this)
