@@ -1,9 +1,9 @@
 #footer {
 	width: 100%;
+	display: flex;
 
 	#footer-img, #footer-txt {
 		width: 40%;
-		float: left;
 		padding: 0 5%;
 		color: white;
 		background-color: black;
@@ -36,6 +36,8 @@
 @media only screen and (max-device-width: 800px) {
 	
 	#footer {
+		flex-direction: column;
+		
 		#footer-img {
 			display: block;
 			padding: 0;

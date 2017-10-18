@@ -44,11 +44,6 @@ new _HomeCtrl2.default(app);
 new _WorkDetailsCtrl2.default(app);
 new _CitationsCtrl2.default(app);
 
-$(document).ready(function () {
-	new _NavbarAnimator2.default($("html"));
-	new _MobileNavbarAnimator2.default($("html"));
-});
-
 },{"./assets/javascripts/MobileNavbarAnimator.js":2,"./assets/javascripts/NavbarAnimator.js":3,"./citations/controllers/CitationsCtrl.js":4,"./config/Router.js":7,"./home/controllers/HomeCtrl.js":8,"./layout/controllers/LayoutCtrl.js":10,"./work/controllers/WorkDetailsCtrl.js":13,"angular-route":16}],2:[function(require,module,exports){
 "use strict";
 
@@ -86,7 +81,6 @@ var MobileNavbarAnimator = function () {
 		this.toggleMenuOnClickEvent();
 		this.deactivateMenuOnItemClickEvent();
 		this.scrollOnAboutClick();
-		console.log(this);
 	}
 
 	_createClass(MobileNavbarAnimator, [{
@@ -242,13 +236,11 @@ var NavbarAnimator = function () {
 		_classCallCheck(this, NavbarAnimator);
 
 		this.html = htmlElem;
-		console.log($("#menu"));
 		this.navbarMenu = this.html.find("#menu");
 		this.footer = this.html.find("#footer");
 		this.aboutItem = this.navbarMenu.find(".about");
 
 		this.scrollOnAboutClick();
-		console.log(this);
 	}
 
 	_createClass(NavbarAnimator, [{
@@ -257,7 +249,6 @@ var NavbarAnimator = function () {
 			var _this = this;
 
 			this.aboutItem.click(function () {
-				console.log('click');
 				_this.html.animate({
 					scrollTop: _this.footer.offset().top
 				}, 500);
@@ -634,9 +625,26 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.default = appHeader;
+
+var _NavbarAnimator = require('../../../assets/javascripts/NavbarAnimator.js');
+
+var _NavbarAnimator2 = _interopRequireDefault(_NavbarAnimator);
+
+var _MobileNavbarAnimator = require('../../../assets/javascripts/MobileNavbarAnimator.js');
+
+var _MobileNavbarAnimator2 = _interopRequireDefault(_MobileNavbarAnimator);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function appHeader(controller) {
 	var directive = {
-		templateUrl: 'app/layout/header/directives/appHeader.html'
+		templateUrl: 'app/layout/header/directives/appHeader.html',
+		link: function link() {
+			angular.element(document).ready(function () {
+				new _NavbarAnimator2.default(angular.element('html'));
+				new _MobileNavbarAnimator2.default(angular.element('html'));
+			});
+		}
 	};
 
 	controller.directive('appHeader', function () {
@@ -644,7 +652,7 @@ function appHeader(controller) {
 	});
 }
 
-},{}],13:[function(require,module,exports){
+},{"../../../assets/javascripts/MobileNavbarAnimator.js":2,"../../../assets/javascripts/NavbarAnimator.js":3}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -729,10 +737,10 @@ exports.default = workDetails;
 function workDetails(controller, workType) {
 	var directive = {
 		templateUrl: 'app/work/directives/workDetails.html',
-		link: function link($scope, $element, $attr) {
-			var properties = $scope[$attr.type];
+		link: function link(scope, element, attr) {
+			var properties = scope[attr.type];
 			for (var property in properties) {
-				$scope[property] = properties[property];
+				scope[property] = properties[property];
 			}
 		}
 	};

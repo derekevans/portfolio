@@ -22,7 +22,6 @@ export default class MobileNavbarAnimator {
 		this.toggleMenuOnClickEvent()
 		this.deactivateMenuOnItemClickEvent()
 		this.scrollOnAboutClick()
-		console.log(this)
 	}
 
 	toggleMenuOnClickEvent() {

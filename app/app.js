@@ -19,8 +19,5 @@ new HomeCtrl(app)
 new WorkDetailsCtrl(app)
 new CitationsCtrl(app)
 
-$(document).ready(() => {
-	new NavbarAnimator($("html"))
-	new MobileNavbarAnimator($("html"))
-})
+
 	

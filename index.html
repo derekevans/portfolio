@@ -11,17 +11,12 @@
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="dist/js/app.js"></script>
 	</head>
-
 	<body ng-app="app">
-		<div ng-controller="LayoutCtrl">
-			<div app-header></div>
-		</div>
+		<div ng-controller="LayoutCtrl" app-header></div>
 
 		<div ng-view></div>
 
-		<div ng-controller="LayoutCtrl">
-			<div app-footer></div>
-		</div>
+		<div ng-controller="LayoutCtrl" app-footer></div>
 	</body>
 </html>
 
