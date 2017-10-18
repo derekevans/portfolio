@@ -3,8 +3,8 @@ import MobileNavbarAnimator from '../../../assets/javascripts/MobileNavbarAnimat
 export default function appHeader(controller) {
 	var directive = {
 		templateUrl: 'app/layout/header/directives/appHeader.html',
-		link: () => {
-			angular.element(document).ready(() => {
+		link: (scope, element, attr) => {
+			element.ready(() => {
 				new MobileNavbarAnimator(angular.element("#mobile-navbar"))
 			})
 		}

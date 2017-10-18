@@ -1,16 +1,14 @@
 export default class AboutScroller {
 	constructor() {
-		this.html = angular.element('html')
-		this.footer = this.html.find("#footer")
-		this.aboutItems = this.html.find(".about")
+		this.footer = angular.element("#footer")
+		this.aboutItems = angular.element(".about")
 
 		this.scrollOnAboutClick()
-		console.log(this)
 	}
 
 	scrollOnAboutClick() {
 		this.aboutItems.click(() => {
-			this.html.animate({
+			angular.element('html, body').animate({
         		scrollTop: this.footer.offset().top
     		}, 500);
 		})

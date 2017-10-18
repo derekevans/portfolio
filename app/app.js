@@ -7,9 +7,6 @@ import HomeCtrl from './home/controllers/HomeCtrl.js'
 import WorkDetailsCtrl from './work/controllers/WorkDetailsCtrl.js'
 import CitationsCtrl from './citations/controllers/CitationsCtrl.js'
 
-import MobileNavbarAnimator from './assets/javascripts/MobileNavbarAnimator.js'
-import NavbarAnimator from './assets/javascripts/NavbarAnimator.js'
-
 var app = angular.module('app', [angularRoute])
 
 new Router(app)

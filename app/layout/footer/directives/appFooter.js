@@ -4,7 +4,7 @@ export default function appFooter(controller) {
 	var directive = {
 		templateUrl: 'app/layout/footer/directives/appFooter.html',
 		link: () => {
-			angular.element(document).ready(() => {
+			angular.element(() => {
 				new AboutScroller()
 			}) 
 		}

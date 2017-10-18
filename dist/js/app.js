@@ -25,14 +25,6 @@ var _CitationsCtrl = require("./citations/controllers/CitationsCtrl.js");
 
 var _CitationsCtrl2 = _interopRequireDefault(_CitationsCtrl);
 
-var _MobileNavbarAnimator = require("./assets/javascripts/MobileNavbarAnimator.js");
-
-var _MobileNavbarAnimator2 = _interopRequireDefault(_MobileNavbarAnimator);
-
-var _NavbarAnimator = require("./assets/javascripts/NavbarAnimator.js");
-
-var _NavbarAnimator2 = _interopRequireDefault(_NavbarAnimator);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = angular.module('app', [_angularRoute2.default]);
@@ -44,7 +36,7 @@ new _HomeCtrl2.default(app);
 new _WorkDetailsCtrl2.default(app);
 new _CitationsCtrl2.default(app);
 
-},{"./assets/javascripts/MobileNavbarAnimator.js":3,"./assets/javascripts/NavbarAnimator.js":4,"./citations/controllers/CitationsCtrl.js":5,"./config/Router.js":8,"./home/controllers/HomeCtrl.js":9,"./layout/controllers/LayoutCtrl.js":11,"./work/controllers/WorkDetailsCtrl.js":14,"angular-route":17}],2:[function(require,module,exports){
+},{"./citations/controllers/CitationsCtrl.js":4,"./config/Router.js":7,"./home/controllers/HomeCtrl.js":8,"./layout/controllers/LayoutCtrl.js":10,"./work/controllers/WorkDetailsCtrl.js":13,"angular-route":16}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59,12 +51,10 @@ var AboutScroller = function () {
 	function AboutScroller() {
 		_classCallCheck(this, AboutScroller);
 
-		this.html = angular.element('html');
-		this.footer = this.html.find("#footer");
-		this.aboutItems = this.html.find(".about");
+		this.footer = angular.element("#footer");
+		this.aboutItems = angular.element(".about");
 
 		this.scrollOnAboutClick();
-		console.log(this);
 	}
 
 	_createClass(AboutScroller, [{
@@ -73,7 +63,7 @@ var AboutScroller = function () {
 			var _this = this;
 
 			this.aboutItems.click(function () {
-				_this.html.animate({
+				angular.element('html, body').animate({
 					scrollTop: _this.footer.offset().top
 				}, 500);
 			});
@@ -118,7 +108,6 @@ var MobileNavbarAnimator = function () {
 
 		this.toggleMenuOnClickEvent();
 		this.deactivateMenuOnItemClickEvent();
-		console.log(this);
 	}
 
 	_createClass(MobileNavbarAnimator, [{
@@ -247,48 +236,6 @@ var MobileNavbarAnimator = function () {
 exports.default = MobileNavbarAnimator;
 
 },{}],4:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var NavbarAnimator = function () {
-	function NavbarAnimator(htmlElem) {
-		_classCallCheck(this, NavbarAnimator);
-
-		this.html = htmlElem;
-		this.navbarMenu = this.html.find("#menu");
-		this.footer = this.html.find("#footer");
-		this.aboutItem = this.navbarMenu.find(".about");
-
-		this.scrollOnAboutClick();
-		console.log(this);
-	}
-
-	_createClass(NavbarAnimator, [{
-		key: "scrollOnAboutClick",
-		value: function scrollOnAboutClick() {
-			var _this = this;
-
-			this.aboutItem.click(function () {
-				_this.html.animate({
-					scrollTop: _this.footer.offset().top
-				}, 500);
-			});
-		}
-	}]);
-
-	return NavbarAnimator;
-}();
-
-exports.default = NavbarAnimator;
-
-},{}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -346,7 +293,7 @@ var CitationsCtrl = function (_BaseCtrl) {
 
 exports.default = CitationsCtrl;
 
-},{"../../common/controllers/BaseCtrl.js":7,"../directives/citations.js":6}],6:[function(require,module,exports){
+},{"../../common/controllers/BaseCtrl.js":6,"../directives/citations.js":5}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -363,7 +310,7 @@ function workDetails(controller, workType) {
 	});
 }
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -415,7 +362,7 @@ var BaseCtrl = function () {
 
 exports.default = BaseCtrl;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -459,7 +406,7 @@ var Router = function () {
 
 exports.default = Router;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -530,7 +477,7 @@ var HomeCtrl = function (_BaseCtrl) {
 
 exports.default = HomeCtrl;
 
-},{"../../common/controllers/BaseCtrl.js":7,"../directives/thumbnails.js":10}],10:[function(require,module,exports){
+},{"../../common/controllers/BaseCtrl.js":6,"../directives/thumbnails.js":9}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -547,7 +494,7 @@ function thumbnails(controller) {
 	});
 }
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -628,7 +575,7 @@ var LayoutCtrl = function (_BaseCtrl) {
 
 exports.default = LayoutCtrl;
 
-},{"../../common/controllers/BaseCtrl.js":7,"../footer/directives/appFooter.js":12,"../header/directives/appHeader.js":13}],12:[function(require,module,exports){
+},{"../../common/controllers/BaseCtrl.js":6,"../footer/directives/appFooter.js":11,"../header/directives/appHeader.js":12}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -646,7 +593,7 @@ function appFooter(controller) {
 	var directive = {
 		templateUrl: 'app/layout/footer/directives/appFooter.html',
 		link: function link() {
-			angular.element(document).ready(function () {
+			angular.element(function () {
 				new _AboutScroller2.default();
 			});
 		}
@@ -657,7 +604,7 @@ function appFooter(controller) {
 	});
 }
 
-},{"../../../assets/javascripts/AboutScroller.js":2}],13:[function(require,module,exports){
+},{"../../../assets/javascripts/AboutScroller.js":2}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -674,8 +621,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function appHeader(controller) {
 	var directive = {
 		templateUrl: 'app/layout/header/directives/appHeader.html',
-		link: function link() {
-			angular.element(document).ready(function () {
+		link: function link(scope, element, attr) {
+			element.ready(function () {
 				new _MobileNavbarAnimator2.default(angular.element("#mobile-navbar"));
 			});
 		}
@@ -686,7 +633,7 @@ function appHeader(controller) {
 	});
 }
 
-},{"../../../assets/javascripts/MobileNavbarAnimator.js":3}],14:[function(require,module,exports){
+},{"../../../assets/javascripts/MobileNavbarAnimator.js":3}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -761,7 +708,7 @@ var WorkDetailsCtrl = function (_BaseCtrl) {
 
 exports.default = WorkDetailsCtrl;
 
-},{"../../common/controllers/BaseCtrl.js":7,"../directives/workDetails.js":15}],15:[function(require,module,exports){
+},{"../../common/controllers/BaseCtrl.js":6,"../directives/workDetails.js":14}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -784,7 +731,7 @@ function workDetails(controller, workType) {
 	});
 }
 
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /**
  * @license AngularJS v1.6.6
  * (c) 2010-2017 Google, Inc. http://angularjs.org
@@ -2015,8 +1962,8 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":16}]},{},[1]);
+},{"./angular-route":15}]},{},[1]);

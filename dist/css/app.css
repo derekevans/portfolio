@@ -33,7 +33,7 @@ a, a:active {
     height: 100px;
     padding: 0 15px; }
     #navbar #menu .menu-items a:hover {
-      font-weight: bold;
+      text-decoration: underline;
       cursor: pointer; }
 
 #mobile-navbar {
