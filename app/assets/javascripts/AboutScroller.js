@@ -9,7 +9,7 @@ export default class AboutScroller {
 	}
 
 	scrollOnAboutClick() {
-		this.aboutItem.click(() => {
+		this.aboutItems.click(() => {
 			this.html.animate({
         		scrollTop: this.footer.offset().top
     		}, 500);
