@@ -97,11 +97,15 @@ export default class MobileNavbarAnimator {
 	}
 
 	disableScroll() {
-		angular.element('html, body').css('overflow', 'hidden')
+		angular.element(document).on('touchmove', function(event) {
+    		e.preventDefault()
+		})
+		// angular.element('html, body').css('overflow', 'hidden')
 	}
 
 	enableScroll() {
-		angular.element('html, body').css('overflow-y', 'auto')
+		angular.element(document).off('touchmove')
+		// angular.element('html, body').css('overflow-y', 'auto')
 	}
 
 	deactivateMenuOnItemClickEvent() {
